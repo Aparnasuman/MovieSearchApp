@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="Rebel_Foods.css">
+</head>
+<body>
+	<img src="rebel_logo-1024x626.jpg" width="15%" style="margin: 0px 2px -142px 1px;
+">
+	<div class="search-wrapper">
+		<i class="material-icons search-icon">search</i> 
+		<input type="text" name="search" placeholder="Search movies.." id="searchbar">
+	</div>
+		<div class="options-header">
+			<div class="dropdown">
+				<button class="dropbtn">
+					<span>Sort By:</span> 
+					<span>Title</span> 
+					<i class="material-icons">keyboard_arrow_down</i>
+				</button>
+				<div class="dropdown-content">
+					<a class="sort-type selected" data-type="title">Title</a> <a class="sort-type" data-type="release_date">Year of Release</a>
+					<hr>
+					<a class="sort-order selected" data-order="asc">Ascending</a> 
+					<a class="sort-order" data-order="desc">Descending</a>
+				</div>
+			</div>
+		</div>
+		<div class="cards-wrapper" id="cards-wrapper"></div>
+		<div class="users-list" id="users-list">
+			<span class="title" id="users-list-toggle">Movie list</span>
+			<div id="users-list-body"></div>
+		</div>
+		<div id="snackbar"></div>
+		<script src="Rebel_Foods.js"></script>
+	</body>
+	</html>

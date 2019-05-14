@@ -1,0 +1,271 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 200px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  margin: 0 15px 30px;
+}
+/* effect of page*/
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.card:hover .overlay {
+  display: block;
+}
+
+.card .overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+.card .overlay .material-icons {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 56px;
+  color: #FFF;
+  cursor: pointer;
+}
+.card .poster {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 5px 5px 0 0;
+}
+.card .container {
+  padding: 2px 16px;
+  text-align: center;
+}
+.card .container p {
+  margin: 10px;
+}
+.card .container p:first-child {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/*dropdown button add sort by title*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown .dropbtn {
+  background-color: #5cab95;
+  color: white;
+  padding: 11px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown .dropbtn span,
+.dropdown .dropbtn i {
+  vertical-align: middle;
+}
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+/*dropdown hover effect*/
+.dropdown .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdown .dropdown-content a.selected {
+  font-weight: bold;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* dropbtn of button data*/
+.dropdown:hover .dropbtn {
+  background-color: #999;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+      background-color: azure;
+}
+.cards-wrapper {
+  width: 100%;
+  min-height: 400px;
+  margin: 25px 0;
+  text-align: center;
+}
+.search-wrapper {
+    margin: 50px 349px 25px;
+    position: relative;
+}
+.options-header {
+  position: relative;
+  height: 50px;
+}
+.options-header .dropdown {
+  position: absolute;
+  right: 0;
+}
+.users-list {
+  width: 100%;
+  height: 184px;
+  position: fixed;
+  bottom: -184px;
+  left: 0;
+  display: block;
+  background-color: #dde;
+  transition: bottom 0.35s ease-in-out;
+}
+
+@media only screen and (max-width: 400px) {
+  .cards-wrapper .card {
+    margin: 0 5px 22px;
+    width: 180px;
+  }
+}
+
+#searchbar {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #11cc7c;
+  border-radius: 47px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 20px 12px 40px;
+}
+.search-icon {
+  position: absolute;
+  left: 11px;
+  top: 11px;
+}
+
+/*search bar*/
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+.users-list .title {
+  position: absolute;
+  right: 0;
+  top: -35px;
+  background: #5cab95;;
+  color: #fff;
+  padding: 9px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.users-list #users-list-body {
+  white-space: nowrap;
+  overflow-x: overlay;
+}
+.users-list #users-list-body.no-after:after {
+  content: '';
+  display: none;
+}
+.users-list #users-list-body:after {
+  content: 'Empty WatchList';
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #555;
+}
+.users-list .card {
+  width: 100px;
+  height: 167px;
+  margin: 5px;
+  margin: 12px 5px 5px;
+  background-color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+.users-list .card .poster {
+  width: 100%;
+  height: 115px;
+}
+.users-list .card .container p {
+  font-size: 12px;
+  margin: 5px;
+}
+.users-list .card .cancel {
+  position: absolute;
+  color: #f00;
+  right: -9px;
+  top: -8px;
+  cursor: pointer;
+  background: #FFF;
+  border-radius: 100%;
+}
